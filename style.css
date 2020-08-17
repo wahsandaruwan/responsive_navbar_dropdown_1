@@ -32,6 +32,7 @@ header{
 }
 
 .container{
+    position: relative;
     display: flex;
     max-width: 65rem;
     padding: 0 2rem;
@@ -63,16 +64,171 @@ header{
 .nav-btn{
     flex: 3;
     display: flex;
+    /* display: none; */
 }
 
+/* Nav Links */
 .nav-links{
     flex: 2;
-    background-color: #0a573d;
 }
 
+.nav-links > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.nav-link > a{
+    line-height: 4rem;
+    color: #eeeaea;
+    padding: 0 0.8rem;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s;
+}
+
+.nav-link > a > i{
+    margin-left: 0.2rem;
+}
+
+.nav-link:hover > a{
+    transform: scale(1.1);
+}
+
+/* Dropdown */
+.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 10rem;
+    /* Hide Dropdown Menu */
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.dropdown ul{
+    position: relative;
+}
+
+.dropdown-link > a{
+    display: flex;
+    background-color: #eeeaea;
+    color: #60b4df;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.dropdown-link:hover > a{
+    background-color: #60b4df;
+    color: #eeeaea;
+}
+
+.dropdown-link:not(:nth-last-child(2)){
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.dropdown-link i{
+    transform: rotate(-90deg);
+}
+
+.arrow{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: -5.5px;
+    left: 32px;
+    background-color: #eeeaea;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.dropdown-link:first-child:hover ~ .arrow{
+    background-color: #60b4df;
+}
+
+.dropdown-link{
+    position: relative;
+}
+
+.dropdown-link .first, .dropdown-link .second{
+    top: 0;
+    left: 110%;
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
+.dropdown-link .first .arrow, .dropdown-link .second .arrow{
+    top: 10px;
+    left: -5.5px
+}
+
+/* Nav Buttons */
 .log-sign{
     flex: 1;
-    background-color: #860707;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.5rem 1.3rem;
+    font-size: 0.8rem;
+    border: 2px solid #eeeaea;
+    border-radius: 2rem;
+    margin: 0 0.2rem;
+    transition: all 0.3s;
+}
+
+.solid, .transparent:hover{
+    background-color: #eeeaea;
+    color: #60b4df;
+}
+
+.transparent, .solid:hover{
+    background-color: transparent;
+    color: #eeeaea;
+}
+
+/* Display Dropdown */
+.nav-link:hover > .dropdown,
+.dropdown-link:hover > .dropdown{
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hamburger */
+.ham-content i{
+    font-size: 1.5rem;
+    line-height: 4rem;
+    cursor: pointer;
+}
+
+.ham-content i:nth-child(1){
+    display: none;
+}
+
+.ham-content i:nth-child(2){
+    display: none;
+}
+
+#check{
+    display: none;
 }
 
 /* Banner */
@@ -95,3 +251,169 @@ section{
     background-color: #72c8f3;
     opacity: 0.3;
 }
+
+@media(max-width:950px){
+    /* Hamburger */
+    .ham-content i:nth-child(1){
+        display: block;
+    }
+
+    /* Navigation */
+    .nav-btn{
+        position: fixed;
+        height: calc(100vh - 4rem);
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        background-color: #72c8f3;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Hidden */
+        transform: translateY(100%);
+        transition: all 0.5s;
+    }
+
+    .nav-links, .log-sign{
+        width: 100%;
+    }
+
+    /* Navigation Links */
+    .nav-links > ul{
+        flex-direction: column;
+    }
+
+    .nav-link{
+        width: 100%;
+        /* For Animation */
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .nav-link > a{
+        line-height: 1rem;
+        padding: 1.6rem 2rem;
+    }
+
+    .nav-link:hover > a{
+        transform: scale(1.008);
+        background-color: #60b4df;
+    }
+
+    /* Dropdown */
+    .dropdown, .dropdown-link .first, .dropdown-link .second{
+        position: initial;
+        top: initial;
+        left: -10%;
+        transform: initial;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        background-color: #3183ac;
+        display: none;
+    }
+
+    .dropdown-link > a{
+        background-color: transparent;
+        color: #eeeaea;
+        padding: 1.2rem 2rem;
+    }
+
+    .dropdown-link .first .dropdown-link > a{
+        padding: 1.2rem 2rem 1.2rem 3rem;
+    }
+
+    .dropdown-link .second .dropdown-link > a{
+        padding: 1.2rem 2rem 1.2rem 4rem;
+    }
+
+    .dropdown-link:not(:nth-last-child(2)){
+        border-bottom: none;
+    }
+
+    .arrow{
+        z-index: 2;
+        background-color: #72c8f3;
+        transform: scale(1.1) rotate(45deg);
+        transition: all 0.3s;
+    }
+
+    .nav-link:hover .arrow{
+        background-color: #60b4df;
+    }
+
+    .dropdown-link ul .arrow{
+        display: none;
+    }
+
+    .dropdown-link:hover > a{
+        background-color: #60b4df;
+    }
+
+    .dropdown-link:first-child:hover ~ .arrow{
+        background-color: #60b4df;
+    }
+
+    .nav-link > a > i{
+        font-size: 1.1rem;
+        transform: rotate(-90deg);
+        transition: all 0.7s;
+    }
+
+    .dropdown i{
+        font-size: 1rem;
+        transition: all 0.7s;
+    }
+
+    .nav-link:hover > .dropdown,
+    .dropdown-link:hover > .dropdown{
+        display: block;
+    }
+
+    .nav-link:hover > a > i,
+    .dropdown-link:hover > a > i{
+        transform: rotate(360deg);
+    }
+
+    /* Navigation Buttons */
+    .log-sign{
+        padding: 2rem 0;
+        /* For Animation */
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    /* For Animations */
+    #check:checked ~ .nav-btn .nav-link,
+    #check:checked ~ .nav-btn .log-sign{
+        animation: animation 2s ease-in forwards 0.4s;
+    }
+    
+    /* For Displaying Nav */
+    /* Display and Hide Icons */
+    #check:checked ~ .ham-content i:nth-child(1){
+        display: none;
+    }
+
+    #check:checked ~ .ham-content i:nth-child(2){
+        display: block;
+    }
+
+    /* Slide up Nav */
+    #check:checked ~ .nav-btn{
+        transform: translateY(0);
+    }
+    
+    /* Animations for Nav-btn and log-Sign */
+    @keyframes animation {
+        from{
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
