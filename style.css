@@ -25,7 +25,7 @@ a{
 header{
     position: sticky;
     top: 0px;
-    background-color: #60b4df;
+    background-color: #4cd137;
     width: 100%;
     z-index: 1000;
     height: 4rem;
@@ -122,7 +122,7 @@ header{
 .dropdown-link > a{
     display: flex;
     background-color: #eeeaea;
-    color: #60b4df;
+    color: #4cd137;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     align-items: center;
@@ -131,7 +131,7 @@ header{
 }
 
 .dropdown-link:hover > a{
-    background-color: #60b4df;
+    background-color: #4cd137;
     color: #eeeaea;
 }
 
@@ -157,7 +157,7 @@ header{
 }
 
 .dropdown-link:first-child:hover ~ .arrow{
-    background-color: #60b4df;
+    background-color: #4cd137;
 }
 
 .dropdown-link{
@@ -196,7 +196,7 @@ header{
 
 .solid, .transparent:hover{
     background-color: #eeeaea;
-    color: #60b4df;
+    color: #4cd137;
 }
 
 .transparent, .solid:hover{
@@ -248,7 +248,7 @@ section{
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #72c8f3;
+    background-color: #55efc4;
     opacity: 0.3;
 }
 
@@ -265,7 +265,7 @@ section{
         top: 4rem;
         left: 0;
         width: 100%;
-        background-color: #72c8f3;
+        background-color: #009432;
         display: block;
         overflow-x: hidden;
         overflow-y: auto;
@@ -297,7 +297,7 @@ section{
 
     .nav-link:hover > a{
         transform: scale(1.008);
-        background-color: #60b4df;
+        background-color: #4cd137;
     }
 
     /* Dropdown */
@@ -309,7 +309,7 @@ section{
         opacity: 1;
         pointer-events: auto;
         width: 100%;
-        background-color: #3183ac;
+        background-color: #20bf6b;
         display: none;
     }
 
@@ -333,13 +333,13 @@ section{
 
     .arrow{
         z-index: 2;
-        background-color: #72c8f3;
+        background-color: #55efc4;
         transform: scale(1.1) rotate(45deg);
         transition: all 0.3s;
     }
 
     .nav-link:hover .arrow{
-        background-color: #60b4df;
+        background-color: #4cd137;
     }
 
     .dropdown-link ul .arrow{
@@ -347,11 +347,11 @@ section{
     }
 
     .dropdown-link:hover > a{
-        background-color: #60b4df;
+        background-color: #4cd137;
     }
 
     .dropdown-link:first-child:hover ~ .arrow{
-        background-color: #60b4df;
+        background-color: #4cd137;
     }
 
     .nav-link > a > i{
