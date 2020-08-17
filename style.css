@@ -382,12 +382,6 @@ section{
         opacity: 0;
         transform: translateY(15px);
     }
-
-    /* For Animations */
-    #check:checked ~ .nav-btn .nav-link,
-    #check:checked ~ .nav-btn .log-sign{
-        animation: animation 2s ease-in forwards 0.4s;
-    }
     
     /* For Displaying Nav */
     /* Display and Hide Icons */
@@ -405,6 +399,11 @@ section{
     }
     
     /* Animations for Nav-btn and log-Sign */
+    #check:checked ~ .nav-btn .nav-link,
+    #check:checked ~ .nav-btn .log-sign{
+        animation: animation 1s ease-in forwards 0.4s;
+    }
+
     @keyframes animation {
         from{
             opacity: 0;
