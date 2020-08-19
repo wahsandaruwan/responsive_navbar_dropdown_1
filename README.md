@@ -1,6 +1,6 @@
 ## This is a responsive navigation menu 
 
-### This is an advanced navigation menu with dropdowns. It has completely developed only using HTML and CSS. And ut is inspired by Online Tutorials Youtube Channel
+### This is an advanced navigation menu with multi level dropdowns. It has completely developed only using HTML and CSS. And ut is inspired by Online Tutorials Youtube Channel
 
 #### Technologies Used
 * HTML5
